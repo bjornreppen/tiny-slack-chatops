@@ -1,13 +1,16 @@
 {
   "name": "tiny-slack-chatops",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A tiny chatops slack chat bot. Responds to messages in a slack channel by executing predefined custom shell scripts.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "while true; do node index.js; sleep 30; done"
   },
-  "keywords": [],
+  "keywords": [
+    "slack",
+    "chatops",
+    "chatbot",
+    "bot"
+  ],
   "author": "Bjorn Reppen <bjreppen@gmail.com> (https://github.com/bjornreppen)",
   "license": "MIT",
   "dependencies": {
