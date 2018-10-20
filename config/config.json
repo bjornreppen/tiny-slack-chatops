@@ -1,0 +1,30 @@
+{
+  "slack": {
+    "token": "",
+    "name": "anna",
+    "channel": "grunnkart_deploy"
+  },
+  "actions": {
+    "sleep": {
+      "message": "going to sleep",
+      "script": "./script/sleep"
+    },
+    "help": {
+      "message": "I understand: deploy, ping, sleep, top"
+    },
+    "ping": {
+      "message": "pong"
+    },
+    "top": {
+      "script": "top"
+    },
+    "deploy": {
+      "verbs": {
+        "tileserver": {
+          "message": "deploying tiny-tileserver",
+          "script": "./script/deploy-tileserver"
+        }
+      }
+    }
+  }
+}

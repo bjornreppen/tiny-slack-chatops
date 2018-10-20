@@ -1,0 +1,16 @@
+{
+  "name": "tiny-slack-chatops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "while true; do node index.js; sleep 30; done"
+  },
+  "keywords": [],
+  "author": "Bjorn Reppen <bjreppen@gmail.com> (https://github.com/bjornreppen)",
+  "license": "MIT",
+  "dependencies": {
+    "slackbots": "^1.2.0"
+  }
+}

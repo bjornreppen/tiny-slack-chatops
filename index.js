@@ -1,0 +1,36 @@
+var SlackBot = require("slackbots")
+const { exec } = require("child_process")
+const config = require("./config/config.json")
+
+config.slack.token = config.slack.token || process.env.SLACK_CHATOPS_TOKEN
+var bot = new SlackBot(config.slack)
+
+bot.on("message", msg => {
+  if (msg.username === config.slack.name) return
+  if (msg.type !== "message") return
+  if (msg.error) return
+  if (!msg.text) return
+  const parts = msg.text.toLowerCase().split(" ")
+  respond(config.actions, parts)
+})
+
+const runScript = script =>
+  exec("./script/" + script, (err, stdout) => {
+    if (err) return say(":rotating_light:" + err)
+    say(":cat:" + stdout)
+  })
+
+const say = msg => bot.postMessageToChannel(config.slack.channel, msg)
+
+function respond(actions, query) {
+  const [command, ...args] = query
+  if (!command) return
+  const action = actions[command]
+  if (!action) return
+  if (args.length > 0) return respond(action.verbs, args)
+  if (action.message) say(action.message)
+  if (action.script) runScript(command)
+
+  if (action.verbs)
+    say(":book: Can " + command + ": " + Object.keys(action.verbs).join(", "))
+}
