@@ -25,5 +25,9 @@ A tiny chatops slack chat bot. Responds to messages in a slack channel by execut
 - Run `npm install`
 - Add a bot at https://my.slack.com/services/new/bot and export the environment variable
   - `export SLACK_CHATOPS_TOKEN=the_token_from_above`
-- Configure your actions in [config.json](config/config.json).
+- Create a _private_ channel (aka group) inside slack.
+  - Invite the bot
+- Edit [config.json](config/config.json)
+  - Set channel
+  - Configure actions
 - Run `npm start`

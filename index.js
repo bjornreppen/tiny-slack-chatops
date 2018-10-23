@@ -20,7 +20,7 @@ const runScript = script =>
     say(":cat:" + stdout)
   })
 
-const say = msg => bot.postMessageToChannel(config.slack.channel, msg)
+const say = msg => bot.postMessageToGroup(config.slack.channel, msg)
 
 function respond(actions, query) {
   const [command, ...args] = query

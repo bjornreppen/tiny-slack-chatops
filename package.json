@@ -1,6 +1,6 @@
 {
   "name": "tiny-slack-chatops",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny chatops slack chat bot. Responds to messages in a slack channel by executing predefined custom shell scripts.",
   "scripts": {
     "start": "while true; do node index.js; sleep 30; done"
