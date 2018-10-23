@@ -15,12 +15,14 @@ bot.on("message", msg => {
 })
 
 const runScript = script =>
-  exec("./script/" + script, (err, stdout) => {
+  exec(script, (err, stdout) => {
     if (err) return say(":rotating_light:" + err)
     say(":cat:" + stdout)
   })
 
-const say = msg => bot.postMessageToGroup(config.slack.channel, msg)
+const say = msg => {
+  bot.postMessageToGroup(config.slack.channel, msg)
+}
 
 function respond(actions, query) {
   const [command, ...args] = query
@@ -29,7 +31,7 @@ function respond(actions, query) {
   if (!action) return
   if (args.length > 0) return respond(action.verbs, args)
   if (action.message) say(action.message)
-  if (action.script) runScript(command)
+  if (action.script) runScript(action.script)
 
   if (action.verbs)
     say(":book: Can " + command + ": " + Object.keys(action.verbs).join(", "))
