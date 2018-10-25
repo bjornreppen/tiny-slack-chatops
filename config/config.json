@@ -1,8 +1,8 @@
 {
   "slack": {
-    "token": "",
+    "token": "xoxb-184490203762-461509522897-heKv62SuxVmp8CC0AYYVX4fJ",
     "name": "anna",
-    "channel": "grunnkart_deploy"
+    "channel": "ops"
   },
   "actions": {
     "sleep": {
@@ -10,7 +10,7 @@
       "script": "./script/sleep"
     },
     "help": {
-      "message": "I understand: deploy, ping, sleep, top"
+      "message": "I understand: deploy, ping, sleep, top, version"
     },
     "ping": {
       "message": "pong"
@@ -23,8 +23,24 @@
         "tileserver": {
           "message": "deploying tiny-tileserver",
           "script": "./script/deploy-tileserver"
-        }
+        },
+	"ratatouille": {
+          "message": "deploying ratatouille",
+          "script": "./script/deploy-ratatouille.sh"
+        },
+	"version" : {
+	  "message": "checking versions",
+	  "script": "./script/version.sh"
+	}
       }
-    }
+    },
+	"version": {
+	  "verbs" : {
+	   "check" : {
+	     "message": "Displaying the running versions of applications",
+	     "script" : "./script/version.sh"
+	   }
+	  }
+	}
   }
 }
