@@ -11,8 +11,7 @@
     "chatbot",
     "bot"
   ],
-  "author": "Bjorn Reppen <bjreppen@gmail.com> (https://github.com/bjornreppen)",
-  "author": "Even Juberg <even.juberg@gmail.com> (https://github.com/myrdrahl)",
+  "author": "Bjorn Reppen <bjreppen@gmail.com> (https://github.com/bjornreppen)", "Even Juberg <even.juberg@gmail.com> (https://github.com/myrdrahl)",
   "license": "MIT",
   "dependencies": {
     "slackbots": "^1.2.0"
