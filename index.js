@@ -38,7 +38,6 @@ function respond(actions, query) {
   if (args.length > 0) return respond(action.verbs, args);
   if (action.message) say(action.message);
   if (action.script) runScript(action.script);
-
   if (action.verbs)
     say(":book: Can " + command + ": " + Object.keys(action.verbs).join(", "));
 }
